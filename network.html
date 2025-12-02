@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Connect | Join Network</title>
+  <style>
+    :root {
+      --green: #2e7d32;
+      --lemon: #fff44f;
+      --blue: #0047ab;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+       font-family: "Segoe UI", Arial, sans-serif;
+      background: url("rivierbackground.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+
+    header {
+      background: linear-gradient(90deg, var(--green), var(--lemon));
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .brand img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+    }
+
+    .brand h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: var(--blue);
+      font-weight: bold;
+      text-decoration: none;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 0;
+      background: var(--blue);
+      transition: width 0.3s;
+      margin: auto;
+    }
+
+    nav a:hover::after { width: 100%; }
+    nav a:hover { color: var(--green); }
+
+    .network-section {
+      background: rgba(0, 0, 0, 0.55);
+      padding: 40px;
+      max-width: 850px;
+      margin: 60px auto;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      backdrop-filter: blur(6px);
+    }
+
+    .network-section h2 {
+      color: var(--lemon);
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .icons {
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+    }
+
+    .icons img {
+      width: 80px;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-radius: 50%;
+    }
+
+    .icons img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.6);
+    }
+
+    footer {
+      background: linear-gradient(90deg, var(--green), var(--lemon));
+      text-align: center;
+      padding: 15px;
+      color: var(--blue);
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .icons img { width: 60px; }
+      .network-section h2 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="brand" onclick="openRivier()">
+      <img src="rivier.png" alt="Logo">
+      <h1>Campus Connect</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="getting-started.html">Getting Started</a>
+      <a href="network.html">Join Network</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html">Contact</a>
+	  <a href="about-me.html">About Me</a>
+    </nav>
+  </header>
+
+  <!-- JOIN NETWORK SECTION -->
+  <section class="network-section">
+    <h2>Join the Network 🤝</h2>
+    <div class="icons">
+      <img src="linkedin.jpg" onclick="window.open('https://www.linkedin.com/school/rivieruniversity/posts/?feedView=all','_blank')">
+      <img src="instagram.jpg" onclick="window.open('https://www.instagram.com/rivieruniversity/','_blank')">
+      <img src="rivier.png" onclick="window.open('https://www.rivier.edu','_blank')">
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 Campus Connect | Rajinikanth Kandukuri. All Rights Reserved.
+  <p style="font-size:0.8rem;margin-top:5px;">Logos and trademarks belong to their respective owners. Used for educational and informational purposes only.</p>
+</footer>
+
+  <script>
+    function openRivier() {
+      window.open("https://www.rivier.edu", "_blank");
+    }
+  </script>
+
+  <script src="main.js"></script>
+</body>
+</html>

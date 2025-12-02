@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Connect | Getting Started</title>
+  <style>
+    :root {
+      --green: #2e7d32;
+      --lemon: #fff44f;
+      --blue: #0047ab;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: url("rivierbackground.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--green), var(--lemon));
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .brand img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+
+    .brand img:hover { transform: scale(1.1) rotate(5deg); }
+
+    .brand h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: var(--blue);
+      font-weight: bold;
+      text-decoration: none;
+      position: relative;
+      transition: 0.3s;
+    }
+
+    nav a::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 0;
+      background: var(--blue);
+      transition: width 0.3s;
+      margin: auto;
+    }
+
+    nav a:hover::after { width: 100%; }
+    nav a:hover { color: var(--green); }
+
+    section.getting-started {
+      background: rgba(0, 0, 0, 0.55);
+      padding: 40px;
+      max-width: 850px;
+      margin: 60px auto;
+      border-radius: 15px;
+      text-align: left;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      backdrop-filter: blur(6px);
+    }
+
+    section.getting-started h2 {
+      color: var(--lemon);
+      margin-bottom: 25px;
+      font-size: 2rem;
+      text-align: center;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin: 20px 0;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    ul li img {
+      width: 90px;
+      height: auto;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    ul li img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5);
+    }
+
+    .maps-btn img {
+      width: 150px;
+      height: auto;
+      margin-top: 25px;
+      cursor: pointer;
+      border-radius: 30px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .maps-btn img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.6);
+    }
+
+    .running-text {
+      font-size: 1.1rem;
+      white-space: nowrap;
+      overflow: hidden;
+      box-sizing: border-box;
+      margin-top: 20px;
+    }
+
+    .running-text span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 15s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-100%, 0); }
+    }
+
+    footer {
+      background: linear-gradient(90deg, var(--green), var(--lemon));
+      text-align: center;
+      padding: 15px;
+      color: var(--blue);
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      nav { flex-wrap: wrap; justify-content: center; }
+      section.getting-started { padding: 20px; }
+      section.getting-started h2 { font-size: 1.5rem; }
+      ul li img { width: 70px; }
+      .maps-btn img { width: 120px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+ <header>
+<div class="brand" onclick="openRivier()">
+<img src="rivier.png" alt="Logo"><h1>Campus Connect</h1>
+</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="getting-started.html">Getting Started</a>
+<a href="network.html">Join Network</a>
+<a href="resources.html">Resources</a>
+<a href="contact.html">Contact</a>
+<a href="about-me.html">About Me</a>
+</nav>
+</header>
+
+
+<section class="getting-started">
+<h2>Getting Started 🧭</h2>
+<ul>
+<li>
+🛬 Airport pickup & Ride Apps
+<div class="thumbs">
+<img src="uber.jpg" onclick="openUrl('https://www.uber.com')">
+<img src="lyft.jpg" onclick="openUrl('https://www.lyft.com')">
+</div>
+</li>
+<li>
+🏡 Housing & Accommodation
+<div class="thumbs">
+<img src="apartment.png" onclick="openUrl('https://www.apartments.com/nashua-nh/')">
+</div>
+</li>
+<li>
+📑 Document Checklist (Rivier Portal)
+<div class="thumbs">
+<img src="rivier.png" onclick="openUrl('https://www.rivier.edu')">
+</div>
+</li>
+<li>
+🗺️ Google Maps — From Airports to Rivier
+<div class="thumbs">
+<img src="google-maps.jpg" onclick="openUrl('https://www.google.com/maps/dir/Boston+Logan+International+Airport/Rivier+University')">
+</div>
+</li>
+<li>
+🚌 Public Transport Links
+<div class="thumbs">
+<img src="Public_transport_collage.jpg" onclick="openUrl('https://www.mbta.com')">
+<img src="public transport.jpeg" onclick="openUrl('https://www.nashuanh.gov/1307/Nashua-Transit-System')">
+</div>
+</li>
+</ul>
+</section>
+
+
+<footer>&copy; 2025 Campus Connect | Rajinikanth Kandukuri. All Rights Reserved.<p style="font-size:0.8rem;margin-top:5px;">Logos and trademarks belong to their respective owners. Used for educational and informational purposes only.</p>
+</footer>
+<script>
+function openRivier(){openUrl('https://www.rivier.edu')}
+function openUrl(u){window.open(u,'_blank')}
+</script>
+
+  <script src="main.js"></script>
+</body>
+</html>

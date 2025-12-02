@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Connect | About Me</title>
+  <style>
+    :root { --green:#2e7d32; --lemon:#fff44f; --blue:#0047ab; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: url("rivierbackground.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: space-between;
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+
+    header {
+      background: linear-gradient(90deg, var(--green), var(--lemon));
+      padding: 15px 25px;
+      display: flex; justify-content: space-between; align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    .brand { display:flex; align-items:center; gap:10px; cursor:pointer; }
+    .brand img { width:45px; height:45px; border-radius:50%; }
+    .brand h1 { font-size:1.8rem; font-weight:bold; color:white; }
+
+    nav { display:flex; gap:25px; }
+    nav a {
+      color: var(--blue);
+      font-weight:bold;
+      text-decoration:none;
+      position:relative;
+      transition:.3s;
+    }
+    nav a::after {
+      content:""; display:block; height:2px; width:0;
+      background:var(--blue); transition:width .3s; margin:auto;
+    }
+    nav a:hover::after { width:100%; }
+    nav a:hover { color:var(--green); }
+
+    /* --- About Section --- */
+    .about-wrap {
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(10px);
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    .head {
+      display:flex; gap:25px; align-items:center; flex-wrap:wrap;
+    }
+
+    .head img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.15);
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+
+    h2 { color: var(--lemon); font-size:2rem; margin-bottom:8px; }
+    .sub { color:#e3e8ff; font-weight:600; }
+
+    .bio {
+      margin-top:20px;
+      line-height:1.6;
+      font-size:1.05rem;
+    }
+
+    .pillset { margin-top:22px; display:flex; flex-wrap:wrap; gap:10px; }
+    .pill {
+      background: rgba(255,255,255,0.1);
+      border:1px solid rgba(255,255,255,0.2);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:.95rem;
+    }
+
+    .cta {
+      margin-top:28px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .btn {
+      background: var(--lemon);
+      color: var(--blue);
+      border:none;
+      border-radius:30px;
+      padding:12px 18px;
+      font-weight:bold;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-block;
+      transition: transform .2s, background .2s;
+    }
+    .btn:hover {
+      background: var(--green);
+      color:white;
+      transform: scale(1.03);
+    }
+
+    footer {
+      background: linear-gradient(90deg, var(--green), var(--lemon));
+      text-align:center;
+      padding:15px;
+      color: var(--blue);
+      font-weight:bold;
+    }
+
+    @media (max-width: 640px){
+      .head { justify-content:center; text-align:center; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand" onclick="openRivier()">
+      <img src="rivier.png" alt="Logo">
+      <h1>Campus Connect</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="getting-started.html">Getting Started</a>
+      <a href="network.html">Join Network</a>
+      <a href="resources.html">Resources</a>
+      <a href="about-me.html">About Me</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="about-wrap">
+    <div class="head">
+      <img src="rk.png" alt="Rajinikanth Kandukuri">
+      <div>
+        <h2>Rajinikanth Kandukuri</h2>
+        <div class="sub">M.S. in Computer Information Systems — Rivier University</div>
+      </div>
+    </div>
+
+    <p class="bio">
+      I am a dedicated professional. I have successfully completed my Bachelor's degree in Mechanical Engg, I embarked on a journey as a Design Specialist and Junior Design Engineer, gaining valuable hands-on experience in the industry. Recognizing the importance of continuous learning and growth, I decided to pursue a Master's degree to deepen my knowledge and advance my career to new heights.
+    </p>
+
+    <p class="bio" style="margin-top:15px; font-style:italic; color:#fff8dc;">
+      💡 This website was developed as a student project for COMP-597 (Web Design) at Rivier University,
+      aimed at helping new international students connect and settle into campus life.
+    </p>
+
+    <div class="pillset">
+	<p class="bio" style="margin-top:20px; font-style:italic; color:#fff8dc;">
+     Crafted with 💻 HTML, 🎨 CSS, and ⚙️ JavaScript.
+
+    <div class="cta">
+      <a class="btn" href="mailto:rajin.kandukuri@gmail.com">Email Me</a>
+      <a class="btn" href="tel:+17815219900">Call: 781-521-9900</a>
+      <a class="btn" href="https://www.linkedin.com/in/rajinikanth-kandukuri-58369a20b/" target="_blank" rel="noopener">View LinkedIn</a>
+      <a class="btn" href="#" title="Resume coming soon" onclick="alert('Resume coming soon!'); return false;">Download Resume</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Campus Connect | Rajinikanth Kandukuri. All Rights Reserved.
+    <p style="font-size:0.8rem;margin-top:5px;">
+      Logos and trademarks belong to their respective owners. Used for educational and informational purposes only.
+    </p>
+  </footer>
+
+  <script>
+    function openRivier(){ window.open("https://www.rivier.edu","_blank"); }
+  </script>
+  <script src="main.js"></script>
+</body>
+</html>

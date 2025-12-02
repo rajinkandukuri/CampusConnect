@@ -1,0 +1,188 @@
+<!DOCTYPE html> <html lang="en"> <head> <link rel="stylesheet" href="style.css"> <meta charset="UTF-8"/> <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <title>Campus Connect | Home</title> <style>
+    :root {
+      --green: #2e7d32;
+      --lemon: #fff44f;
+      --blue: #0047ab;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: url("rivierbackground.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(90deg, var(--green), var(--lemon));
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .brand img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+    }
+
+    .brand h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: var(--blue);
+      font-weight: bold;
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    nav a::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 0;
+      background: var(--blue);
+      transition: width 0.3s;
+      margin: auto;
+    }
+
+    nav a:hover::after { width: 100%; }
+    nav a:hover { color: var(--green); }
+
+    /* DATE & TIME - Bottom Right Corner */
+    #datetime {
+      position: fixed;
+      bottom: 15px;
+      right: 25px;
+      color: white;
+      font-weight: bold;
+      font-size: 0.9rem;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 6px 10px;
+      border-radius: 10px;
+      z-index: 1000;
+    }
+
+    /* BACKDROP BOX */
+    .backdrop {
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      max-width: 800px;
+      margin: 100px auto;
+      padding: 50px 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .backdrop h1 {
+      font-size: 2.8rem;
+      font-weight: bold;
+      color: var(--lemon);
+      text-shadow: 0 0 20px var(--lemon);
+      animation: glow 3s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px var(--lemon), 0 0 20px var(--lemon); }
+      to { text-shadow: 0 0 20px var(--lemon), 0 0 40px var(--lemon); }
+    }
+
+    .scroll-text {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: marquee 15s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .start-btn {
+      display: inline-block;
+      margin-top: 30px;
+      background: var(--lemon);
+      color: var(--blue);
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .start-btn:hover {
+      background: var(--green);
+      color: white;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: linear-gradient(90deg, var(--green), var(--lemon));
+      text-align: center;
+      padding: 15px;
+      color: var(--blue);
+      font-weight: bold;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .backdrop h1 { font-size: 2rem; }
+      .start-btn { padding: 12px 20px; font-size: 1rem; }
+    }
+  </style> </head> <body> <!-- HEADER --> <header> <div class="brand" onclick="openRivier()"> <img src="rivier.png" alt="Logo"> <h1>Campus Connect</h1> </div> <nav> <a href="index.html">Home</a> <a href="about.html">About</a> <a href="getting-started.html">Getting Started</a> <a href="network.html">Join Network</a> <a href="resources.html">Resources</a> <a href="contact.html">Contact</a> </nav> </header> <!-- HERO SECTION with BACKDROP --> <section class="backdrop"> <h1>Welcome to Rivier University!</h1> <div class="scroll-text">
+      Helping Rivier international students feel at home 🏡 — Welcome to the community!
+    </div> <button class="start-btn" onclick="window.location.href='about.html'">Start Here</button> </section> <!-- FOOTER --> <footer>
+    &copy; 2025 Campus Connect | Rajinikanth Kandukuri. All Rights Reserved.
+  <p style="font-size:0.8rem;margin-top:5px;">Logos and trademarks belong to their respective owners. Used for educational and informational purposes only.</p> </footer> <!-- DATE & TIME --> <div id="datetime"></div> <script>
+    function openRivier() {
+      window.open("https://www.rivier.edu", "_blank");
+    }
+
+    function updateDateTime() {
+      const now = new Date();
+      const formatted = now.toLocaleString();
+      document.getElementById('datetime').textContent = formatted;
+    }
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+  </script> <script src="main.js"></script> </body> </html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="style.css">
+
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Campus Connect | Contact</title>
+  <style>
+    :root {
+      --green: #2e7d32;
+      --lemon: #fff44f;
+      --blue: #0047ab;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+    background: url("rivierbackground.jpg") no-repeat center center fixed;
+
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      justify-content: space-between;
+      color: white;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--green), var(--lemon));
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .brand img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+    }
+
+    .brand h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: var(--blue);
+      font-weight: bold;
+      text-decoration: none;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 0;
+      background: var(--blue);
+      transition: width 0.3s;
+      margin: auto;
+    }
+
+    nav a:hover::after { width: 100%; }
+    nav a:hover { color: var(--green); }
+
+    /* Backdrop section */
+    .backdrop {
+      background: rgba(0, 0, 0, 0.7);
+      max-width: 750px;
+      margin: 60px auto;
+      padding: 40px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(12px);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .backdrop h2 {
+      color: var(--lemon);
+      font-size: 2rem;
+      margin-bottom: 30px;
+      font-weight: bold;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Contact Info */
+    .contact-info {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .contact-item img {
+      width: 28px;
+      height: 28px;
+    }
+
+    .contact-item a {
+      color: var(--lemon);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .contact-item a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    /* Form */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      text-align: left;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      width: 100%;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    input:focus, textarea:focus {
+      box-shadow: 0 0 10px var(--lemon);
+    }
+
+    button {
+      background: var(--lemon);
+      color: var(--blue);
+      font-weight: bold;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background: var(--green);
+      color: white;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: linear-gradient(90deg, var(--green), var(--lemon));
+      text-align: center;
+      padding: 15px;
+      color: var(--blue);
+      font-weight: bold;
+    }
+
+  @media (max-width: 768px) {
+      nav { flex-wrap: wrap; justify-content: center; }
+      section.getting-started { padding: 20px; }
+      section.getting-started h2 { font-size: 1.5rem; }
+      ul li img { width: 70px; }
+      .maps-btn img { width: 120px; }
+    }
+
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="brand" onclick="openRivier()">
+      <img src="rivier.png" alt="Logo">
+      <h1>Campus Connect</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="getting-started.html">Getting Started</a>
+      <a href="network.html">Join Network</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html">Contact</a>
+	  <a href="about-me.html">About Me</a>
+    </nav>
+  </header>
+
+  <!-- CONTACT SECTION -->
+  <section class="backdrop">
+    <h2>Contact Us 📞</h2>
+    <div class="contact-info">
+      <div class="contact-item">
+        <img src="contact.jpg" alt="Phone">
+        <span><strong>Mobile:</strong> <a href="tel:7815219900">781-521-9900</a></span>
+      </div>
+
+      <div class="contact-item">
+        <img src="email.png" alt="Email">
+        <span><strong>Email:</strong> <a href="mailto:rkandukuri@rivier.edu">rkandukuri@rivier.edu</a></span>
+      </div>
+
+      <div class="contact-item">
+        <img src="google-maps.jpg" alt="Location">
+        <span><strong>Address:</strong> Rivier University, Nashua, NH</span>
+      </div>
+    </div>
+
+    <!-- Contact Form -->
+    <form action="https://docs.google.com/forms/d/e/your-google-form-id/formResponse" method="POST" target="_blank" onsubmit="showAlert()">
+      <input type="text" name="entry.123456" placeholder="Your Name" required>
+      <input type="email" name="entry.789101" placeholder="Your Email" required>
+      <textarea name="entry.112131" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 Campus Connect | Rajinikanth Kandukuri. All Rights Reserved.
+  <p style="font-size:0.8rem;margin-top:5px;">Logos and trademarks belong to their respective owners. Used for educational and informational purposes only.</p>
+</footer>
+
+  <script>
+    function openRivier() {
+      window.open("https://www.rivier.edu", "_blank");
+    }
+
+    function showAlert() {
+      alert("✅ Thank you for contacting us! Your message has been submitted.");
+    }
+  </script>
+
+  <script src="main.js"></script>
+</body>
+</html>
